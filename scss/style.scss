@@ -61,7 +61,7 @@ button {
         cursor: pointer;
         transition: all .2s linear;
     }
-    
+
     &__btn:hover {
         background-color: $colorWhite;
         color: $colorBlack;
@@ -95,12 +95,15 @@ button {
 
 .animated-strip {
     background-color: $colorGreen;
-    display: flex;
-    gap: 51px;
-    overflow: hidden;
     padding: 1.6875rem 3.0625rem;
-    align-items: center;
-    
+    overflow: hidden;
+
+    &__scroll {
+        display: flex;
+        gap: 51px;
+        align-items: center;
+    }
+
     &__text {
         color: $colorBlack;
         font-size: 1.875rem;
@@ -115,6 +118,7 @@ button {
     background-color: $colorBlack;
     padding-bottom: 144px;
     overflow: hidden;
+    transition: background-color 2s ease;
 }
 
 .about {
@@ -253,7 +257,7 @@ button {
 
     &__text {
         @extend .about__text;
-        color:$colorBlack;
+        color: $colorBlack;
         padding-top: 1.5rem;
         padding-bottom: 2.25rem;
         width: auto;
@@ -273,7 +277,7 @@ button {
     &__decor {
         overflow: hidden;
     }
-    
+
     &__star {
         position: absolute;
     }
@@ -286,6 +290,20 @@ button {
     &__star_4 {
         bottom: -99px;
         right: -69px;
+    }
+}
+
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 10px;
+    border-radius: 30px;
+    position: fixed;
+    right: 150px;
+    bottom: 150px;
+    display: none;
+
+    &__link {
+        color: white;
     }
 }
 

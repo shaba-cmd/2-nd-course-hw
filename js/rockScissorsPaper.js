@@ -1,46 +1,57 @@
-function rockScissorsPaper() {
-    const game = ["камень", "ножницы", "бумага"];
-    
-    for (; ;) {
-        const randomIndex = Math.floor(Math.random() * game.length);
-        const machine = game[randomIndex];
-        
-        const user = prompt("Выберите: Камень, Бумага, Ножницы").toLowerCase().trim();
+const gameFiveBoxEl = document.querySelector('#gameFive');
+const miniGamesFiveBtnEl = gameFiveBoxEl.querySelector('.mini-games__btn');
 
-        if (user === null) {
-            alert('До встречи, еще увидемся!');
-            break;
-        } else if (user.trim() === '') {
-            alert('Пустая строка! Выберите чем будете ходить: ');
-            continue;
-        }
+miniGamesFiveBtnEl.addEventListener('click', function () {
+    function rockScissorsPaper() {
+        const game = ["камень", "ножницы", "бумага"];
 
-        if (!game.includes(user)) {
-            alert("Некорректный ввод! Пожалуйста, выберите: камень, ножницы или бумага");
-            continue;
-        }
+        for (; ;) {
+            const randomIndex = Math.floor(Math.random() * game.length);
+            const machine = game[randomIndex];
 
-        if (user === machine) {
-            result = "Ничья!";
-        } else if (
-            (user === "камень" && machine === "ножницы") ||
-            (user === "ножницы" && machine === "бумага") ||
-            (user === "бумага" && machine === "камень")
-        ) {
-            result = "Вы победили!";
-        } else {
-            result = "Компьютер победил!";
-        }
+            const userInput = prompt('Выберите: Камень, Бумага, Ножницы');
 
-        alert(`Ваш выбор: ${user} \nВыбор компьютера: ${machine} \n${result}`);
+            if (userInput === null) {
+                alert('До встречи, еще увидемся!');
+                break;
+            } 
+            
+            const user = userInput.toLowerCase().trim();
+            
+            if (user === '') {
+                alert('Пустая строка! Выберите чем будете ходить: ');
+                continue;
+            }
 
-        const repeat = confirm('Сыграть еще раз?');
+            if (!game.includes(user)) {
+                alert('Некорректный ввод! Пожалуйста, выберите: камень, ножницы или бумага');
+                continue;
+            }
 
-        if (repeat) {
-            continue;
-        } else {
-            alert('До встречи, еще увидемся!');
-            break;
+            if (user === machine) {
+                result = "Ничья!";
+            } else if (
+                (user === "камень" && machine === "ножницы") ||
+                (user === "ножницы" && machine === "бумага") ||
+                (user === "бумага" && machine === "камень")
+            ) {
+                result = "Вы победили!";
+            } else {
+                result = "Компьютер победил!";
+            }
+
+            alert(`Ваш выбор: ${user} \nВыбор компьютера: ${machine} \n${result}`);
+
+            const repeat = confirm('Сыграть еще раз?');
+
+            if (repeat) {
+                continue;
+            } else {
+                alert('До встречи, еще увидемся!');
+                break;
+            }
         }
     }
-}
+
+    rockScissorsPaper();
+});

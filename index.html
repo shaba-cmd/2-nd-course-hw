@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
-    <section class="hero center">
+    <section id="scrollTop" class="hero center">
         <div class="hero__content">
             <h1 class="hero__title">Добро пожаловать <br> на мой сайт мини-игр</h1>
             <p class="hero__info">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай <span>«Поехали!»</span> и <span>приступай.</span></p>
@@ -26,18 +26,20 @@
 
     </section>
     <section class="animated-strip">
-        <h3  class="animated-strip__text">Викторина</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
-        <h3  class="animated-strip__text">Угадай число</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
-        <h3  class="animated-strip__text">Переверни текст</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
-        <h3  class="animated-strip__text">Простая арифметика</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
-        <h3  class="animated-strip__text">Камень, ножницы, бумага</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
-        <h3  class="animated-strip__text">Генератор случайных цветов</h3>
-        <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+        <div class="animated-strip__scroll">
+            <h3  class="animated-strip__text">Викторина</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+            <h3  class="animated-strip__text">Угадай число</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+            <h3  class="animated-strip__text">Переверни текст</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+            <h3  class="animated-strip__text">Простая арифметика</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+            <h3  class="animated-strip__text">Камень, ножницы, бумага</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+            <h3  class="animated-strip__text">Генератор случайных цветов</h3>
+            <img class="animated-strip__star" src="./img/Star.svg" alt="star">
+        </div>
     </section>
 
     <main class="main center">
@@ -121,7 +123,7 @@
                     <div class="mini-games__box">
                         <h3 class="mini-games__title">Угадай число</h3>
                         <p class="mini-games__text">Попробуй угадать случайное число от 1 до 100.</p>
-                        <button class="mini-games__btn" onclick="guessNum()">Играть!</button>
+                        <button class="mini-games__btn">Играть!</button>
                     </div>
                     <img class="mini-games__img" src="./img/Game1.jpg" alt="Угадай число">
                 </article>
@@ -130,14 +132,14 @@
                     <div class="mini-games__box">
                         <h3 class="mini-games__title">Простая арифметика</h3>
                         <p class="mini-games__text">Попробуй решить простые арифметические задачи.</p>
-                        <button class="mini-games__btn" onclick="simpleArithmetic()">Играть!</button>
+                        <button class="mini-games__btn">Играть!</button>
                     </div>
                 </article>
                 <article id="gameThree" class="mini-games__game mini-games__game_rev">
                     <div class="mini-games__box">
                         <h3 class="mini-games__title">Переверни текст</h3>
                         <p class="mini-games__text">Попробуй ввести текст, который будет перевернут.</p>
-                        <button class="mini-games__btn" onclick="reverseText()">Играть!</button>
+                        <button class="mini-games__btn">Играть!</button>
                     </div>
                     <img class="mini-games__img" src="./img/Game3.jpg" alt="Переверни текст">
                 </article>
@@ -146,7 +148,7 @@
                     <div class="mini-games__box">
                         <h3 class="mini-games__title">Викторина</h3>
                         <p class="mini-games__text">Отвечай на вопросы викторины с вариантами ответов.</p>
-                        <button class="mini-games__btn" onclick="quiz()">Играть!</button>
+                        <button class="mini-games__btn">Играть!</button>
                     </div>
                 </article>
                 <article id="gameFive" class="mini-games__game mini-games__game_rev">
@@ -161,7 +163,9 @@
                     <img class="mini-games__img" src="./img/Game6.jpg" alt="Генератор случайных цветов">
                     <div class="mini-games__box">
                         <h3 class="mini-games__title">Генератор случайных цветов</h3>
-                        <p class="mini-games__text mini-games__text_width">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                        <p class="mini-games__text mini-games__text_width">
+                            Игра, в которой при клике на кнопку фон страницы меняется на случайный.
+                        </p>
                         <button class="mini-games__btn">Играть!</button>
                     </div>
                 </article>
@@ -169,6 +173,14 @@
             <img class="mini-games__star mini-games__star_3" src="./img/vectors/Star3.svg" alt="decorate">
             <img class="mini-games__star mini-games__star_4" src="./img/vectors/Star4.svg" alt="decorate">
         </section>
+
+        <div class="arrow">
+            <a class="arrow__link" href="#scrollTop">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
+            </a>
+        </div>
     </main>
 
     <footer class="footer">
@@ -181,11 +193,16 @@
     <!-- <script src="./js/hw-N4.js"></script> -->
     <!-- <script src="./js/hw-N5.js"></script> -->
     <!-- <script src="./js/hw-N6.js"></script> -->
-    <script src="./js/hw-N7.js"></script>
+    <!-- <script src="./js/hw-N7.js"></script> -->
     <script src="./js/guessNum.js"></script>
     <script src="./js/simpleArithmetic.js"></script>
     <script src="./js/reverseText.js"></script>
     <script src="./js/quiz.js"></script>
     <script src="./js/rockScissorsPaper.js"></script>
+    <script src="./js/randomBackgroundColor.js"></script>
+    <script src="./js/scrollText.js"></script>
+    <script src="./js/linkScroll.js"></script>
+
+
 </body>
 </html>
